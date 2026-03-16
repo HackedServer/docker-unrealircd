@@ -6,3 +6,4 @@ services:
       - "6697:6697"  # IRC (TLS)
     volumes:
       - ./unrealircd.conf:/home/ircd/unrealircd/conf/unrealircd.conf:ro
+      - ./data:/home/ircd/unrealircd/data:rw
