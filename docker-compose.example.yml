@@ -1,0 +1,8 @@
+services:
+  unrealircd:
+    image: ghcr.io/hackedserver/docker-unrealircd:latest
+    ports:
+      - "6667:6667"  # IRC (plaintext)
+      - "6697:6697"  # IRC (TLS)
+    volumes:
+      - ./unrealircd.conf:/home/ircd/unrealircd/conf/unrealircd.conf:ro

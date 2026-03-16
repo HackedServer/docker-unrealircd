@@ -17,6 +17,5 @@ RUN curl -fsSL "$UNREALIRCD_URL" -o /tmp/unrealircd.tar.gz && \
     rm -rf /tmp/unrealircd*
 WORKDIR /home/ircd/unrealircd
 
-EXPOSE 6667 6697 8067
-
-CMD ["./unrealircd", "-F"]
+ENTRYPOINT ["./unrealircd"]
+CMD ["start"]
