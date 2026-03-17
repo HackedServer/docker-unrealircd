@@ -17,5 +17,8 @@ RUN curl -fsSL "$UNREALIRCD_URL" -o /tmp/unrealircd.tar.gz && \
     rm -rf /tmp/unrealircd*
 WORKDIR /home/ircd/unrealircd
 
-ENTRYPOINT ["./unrealircd"]
+COPY --chown=ircd:ircd entrypoint.sh ./entrypoint.sh
+RUN chmod +x entrypoint.sh
+
+ENTRYPOINT ["./entrypoint.sh"]
 CMD ["start"]

@@ -1,0 +1,10 @@
+#!/bin/sh
+if [ "$1" = "start" ]; then
+  ./unrealircd start
+  while kill -0 $(cat data/unrealircd.pid) 2>/dev/null; do
+    sleep 5
+  done
+  exit 1
+else
+  exec ./unrealircd "$@"
+fi
